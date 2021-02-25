@@ -26,6 +26,11 @@ class Intersection:
             street = self.get_car_street(car)
             car.move_into_new_street(street)
 
+    def calculate_current_schedule(self, timestep: int) -> int:
+        if timestep - 1 > len(self.schedule):
+            timestep = timestep % len(self.schedule)
+        return self.schedule[timestep]
+
     # TODO verwijderen, moet dict worden
     def get_car_street(self, car) -> Street:
         for street in self.output_streets:
