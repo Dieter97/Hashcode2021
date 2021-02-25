@@ -1,5 +1,6 @@
 class Intersection:
 
-    def __init__(self, index, input_streets):
+    def __init__(self, index):
         self.index = index
-        self.input_streets = input_streets
+        self.input_streets = []
+        self.output_streets = []
