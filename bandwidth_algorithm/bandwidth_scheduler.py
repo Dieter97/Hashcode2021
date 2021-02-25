@@ -1,8 +1,10 @@
 from typing import Dict, List
 
+from streets.car import Car
+from streets.intersection import Intersection
 
-def create_schedules_based_on_bandwidth(cars: List[Car],
-                                        intersections: Dict[int, Intersection]):
+
+def create_schedules_based_on_bandwidth(cars: List[Car], intersections: Dict[int, Intersection]):
     bw_mapping = create_bandwidth_mapping(cars)
     for intersection in intersections:
         total_load = [bw_mapping[street] for street in intersection.streets]

@@ -34,6 +34,6 @@ class Intersection:
     # TODO verwijderen, moet dict worden
     def get_car_street(self, car) -> Street:
         for street in self.output_streets:
-            if street.name == car.streets[car.current_street_index + 1]:
+            if street.name == car.streets[car.current_street_index + 1].name:
                 return street
         raise Exception

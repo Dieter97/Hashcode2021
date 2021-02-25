@@ -9,7 +9,7 @@ class Car:
 
     def __init__(self, n_streets):
         self.n_streets: int = n_streets
-        self.streets: List[int] = []
+        self.streets: List[Street] = []
         self.time_from_end_of_street: int = 0
         self.current_street_index: int = 0
 
