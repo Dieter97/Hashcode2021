@@ -1,22 +1,22 @@
-from pizza.pizza_optimizer import PizzaOptimizer
+from streets.intersection_optimize import IntersectionOptimizer
 from streets.street_parser import StreetParser
 
 
 def work(input_file: str, output_file: str):
     parser = StreetParser()
     problem = parser.parse_file(input_file)
-    #optimizer = PizzaOptimizer(problem[0],problem[1],problem[2],problem[3],problem[4], problem[5])
-    #solution = optimizer.calculate_solution()
-    #write_solution(solution, output_file)
+    optimizer = IntersectionOptimizer(problem)
+    solution = optimizer.calculate_solution()
+    write_solution(solution, output_file)
 
 def write_solution(intersections, file):
     valid_intersections = []
-    for intersection in intersections:
+    for intersection in intersections.values():
         if intersection.schedule:
             valid_intersections.append(intersection)
 
     f = open(file, "w")
-    f.write(str(len(valid_intersections)+'\n'))
+    f.write(str(len(valid_intersections))+'\n')
     # Solution is list of intersections with a schedule object
     for intersection in valid_intersections:
         f.write(intersection.index+'\n')
