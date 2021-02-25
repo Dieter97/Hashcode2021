@@ -37,4 +37,4 @@ class StreetParser:
             i += 1
 
         cars.sort(key=lambda x: x.n_streets, reverse=False)
-        return intersections, cars, streets
+        return n_sim, n_intersections, n_streets, n_cars, bonus_point, intersections, cars, streets
