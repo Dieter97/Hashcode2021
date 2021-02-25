@@ -11,12 +11,12 @@ def work(input_file: str, output_file: str):
 
 def write_solution(intersections, file):
     valid_intersections = []
-    for intersection in intersections:
+    for intersection in intersections.values():
         if intersection.schedule:
             valid_intersections.append(intersection)
 
     f = open(file, "w")
-    f.write(str(len(valid_intersections)+'\n'))
+    f.write(str(len(valid_intersections))+'\n')
     # Solution is list of intersections with a schedule object
     for intersection in valid_intersections:
         f.write(intersection.index+'\n')
