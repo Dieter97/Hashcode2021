@@ -39,8 +39,9 @@ class Intersection:
         for s in self.schedule:
             schedule = s
             timestep -= s.duration
-            if timestep == 0:
-                schedule == None
+
+        if timestep > 0:
+            schedule = None
         return schedule
 
     # TODO verwijderen, moet dict worden

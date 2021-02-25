@@ -16,9 +16,9 @@ class Car:
     def is_at_end_of_street(self) -> bool:
         return self.time_from_end_of_street == 0
 
-    def get_closer_to_end_of_street(self) -> None:
+    def get_closer_to_end_of_street(self,step) -> None:
         if self.time_from_end_of_street > 0:
-            self.time_from_end_of_street -= 1
+            self.time_from_end_of_street = max(0,self.time_from_end_of_street-step)
 
     def move_into_new_street(self, street: Street):
         self.time_from_end_of_street = street.time

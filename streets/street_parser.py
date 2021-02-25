@@ -33,6 +33,7 @@ class StreetParser:
                 for s in info[2:]:
                     car.streets.append(streets[s])
                 streets[start].cars.put(car)
+                car.streets.reverse()
                 cars.append(car)
             i += 1
 
