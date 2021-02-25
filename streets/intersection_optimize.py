@@ -9,3 +9,8 @@ class IntersectionOptimizer:
         self.intersections = problem[4] 
         self.cars = problem[5] 
         self.streets = problem[6]
+
+    def calculate_solution(self):
+
+
+        return self.intersections

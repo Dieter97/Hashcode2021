@@ -1,13 +1,13 @@
-from pizza.pizza_optimizer import PizzaOptimizer
+from streets.intersection_optimize import IntersectionOptimizer
 from streets.street_parser import StreetParser
 
 
 def work(input_file: str, output_file: str):
     parser = StreetParser()
     problem = parser.parse_file(input_file)
-    #optimizer = PizzaOptimizer(problem[0],problem[1],problem[2],problem[3],problem[4], problem[5])
-    #solution = optimizer.calculate_solution()
-    #write_solution(solution, output_file)
+    optimizer = IntersectionOptimizer(problem)
+    solution = optimizer.calculate_solution()
+    write_solution(solution, output_file)
 
 def write_solution(intersections, file):
     valid_intersections = []
