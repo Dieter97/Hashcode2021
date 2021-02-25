@@ -11,4 +11,6 @@ class Street:
         self.cars: queue.Queue = queue.Queue()
 
     def has_car_waiting(self) -> bool:
+        if self.cars.qsize() == 0:
+            return False
         return self.cars.queue[0].is_at_end_of_street()
