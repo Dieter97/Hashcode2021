@@ -25,7 +25,8 @@ class BandwidthScheduler(IntersectionOptimizer):
             for street in intersection.input_streets:
                 if street in bw_mapping:
                     schedule = Schedule(street, ceil(bw_mapping[street] / total_load))
-                    intersection.schedule.append(schedule)
+                    if schedule.duration != 0:
+                        intersection.schedule.append(schedule)
 
     @staticmethod
     def create_bandwidth_mapping(cars: List[Car]) -> Dict[Street, int]:
