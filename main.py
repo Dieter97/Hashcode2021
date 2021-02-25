@@ -1,11 +1,8 @@
 from naive_algorithm.NaiveSovler import NaiveIntersectionOptimizer as Solver
-from streets.street_parser import StreetParser
 
 
-def work(input_file: str, output_file: str):
-    parser = StreetParser()
-    problem = parser.parse_file(input_file)
-    optimizer = Solver(problem)
+def work(input_file: str, output_file: str):   
+    optimizer = Solver(input_file)
     solution = optimizer.calculate_solution()
     write_solution(solution, output_file)
 

@@ -1,6 +1,15 @@
+from streets.street_parser import StreetParser
+
+
 class IntersectionOptimizer:
 
-    def __init__(self, problem):
+    def __init__(self, input_file):
+        self.input_file = input_file
+        self.parser = StreetParser()
+        self.reload()
+        
+    def reload(self):
+        problem = self.parser.parse_file(self.input_file)
         self.n_sim = problem[0]
         self.n_intersections = problem[1]
         self.n_streets = problem[2]
