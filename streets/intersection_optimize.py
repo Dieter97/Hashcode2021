@@ -11,7 +11,7 @@ class IntersectionOptimizer:
         self.streets = problem[7]
 
     def calculate_solution(self):
-        while n_sim > 0:
+        while self.n_sim > 0:
             for intersection in self.intersections:
                 best_street = None
                 best_street_score = -1
