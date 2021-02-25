@@ -4,3 +4,4 @@ class Intersection:
         self.index = index
         self.input_streets = []
         self.output_streets = []
+        self.schedule = []

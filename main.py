@@ -9,9 +9,20 @@ def work(input_file: str, output_file: str):
     #solution = optimizer.calculate_solution()
     #write_solution(solution, output_file)
 
-def write_solution(solution, file):
+def write_solution(intersections, file):
+    valid_intersections = []
+    for intersection in intersections:
+        if intersection.schedule:
+            valid_intersections.append(intersection)
+
     f = open(file, "w")
-    # TODO
+    f.write(str(len(valid_intersections)+'\n'))
+    # Solution is list of intersections with a schedule object
+    for intersection in valid_intersections:
+        f.write(intersection.index+'\n')
+        f.write(len(intersection.schedule)+'\n')
+        for s in intersection.schedule:
+            f.write(s.street.name+' '+s.duration)
     f.close()
 
 if __name__ == "__main__":
