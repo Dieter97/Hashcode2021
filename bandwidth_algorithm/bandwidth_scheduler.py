@@ -1,4 +1,4 @@
-from math import floor
+from math import floor, ceil
 from typing import Dict, List
 
 from streets.car import Car
@@ -24,7 +24,7 @@ class BandwidthScheduler(IntersectionOptimizer):
                 continue
             for street in intersection.input_streets:
                 if street in bw_mapping:
-                    schedule = Schedule(street, floor(bw_mapping[street] / total_load))
+                    schedule = Schedule(street, ceil(bw_mapping[street] / total_load))
                     intersection.schedule.append(schedule)
 
     @staticmethod
