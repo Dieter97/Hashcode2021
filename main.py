@@ -1,12 +1,11 @@
-from bandwidth_algorithm.bandwidth_scheduler import BandwidthScheduler
+from naive_algorithm.NaiveSovler import NaiveIntersectionOptimizer as Solver
 from streets.street_parser import StreetParser
 
 
 def work(input_file: str, output_file: str):
     parser = StreetParser()
     problem = parser.parse_file(input_file)
-    # optimizer = IntersectionOptimizer(problem)
-    optimizer = BandwidthScheduler(problem)
+    optimizer = Solver(problem)
     solution = optimizer.calculate_solution()
     write_solution(solution, output_file)
 

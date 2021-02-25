@@ -18,7 +18,7 @@ class Intersection:
     def get_busiest_street(self) -> Street:
         busiest = self.input_streets[0]
         for i in range(1, len(self.input_streets)):
-            if len(busiest.cars) > len(self.input_streets[i].cars):
+            if busiest.cars.qsize() > self.input_streets[i].cars.qsize():
                 busiest = self.input_streets[i]
         return busiest
 
