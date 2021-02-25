@@ -24,7 +24,8 @@ def write_solution(intersections, file):
         f.write(f"{intersection.index}\n")
         f.write(f"{len(intersection.schedule)}\n")
         for s in intersection.schedule:
-            f.write(f"{s.street.name} {s.duration}\n")
+            if s.duration != 0:
+                f.write(f"{s.street.name} {s.duration}\n")
     f.close()
 
 
