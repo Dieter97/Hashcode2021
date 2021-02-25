@@ -29,7 +29,7 @@ def write_solution(intersections, file):
 
 
 if __name__ == "__main__":
-    inputs = ["inputs/a.txt", "inputs/b.txt", "inputs\\c.txt", "inputs\\d.txt", "inputs\\e.txt", "inputs\\f.txt"]
-    outputs = ["outputs/out.a", "outputs/out.b", "outputs\\out.c", "outputs\\out.d", "outputs\\out.e", "outputs\\out.f"]
+    inputs = ["inputs/a.txt", "inputs/b.txt","inputs/c.txt", "inputs/d.txt", "inputs/e.txt", "inputs/f.txt"]
+    outputs = ["outputs/out.a", "outputs/out.b", "outputs/out.c", "outputs/out.d", "outputs/out.e", "outputs/out.f"]
     for i in range(len(inputs)):
         work(inputs[i], outputs[i])
