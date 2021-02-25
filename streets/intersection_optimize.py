@@ -17,6 +17,6 @@ class IntersectionOptimizer:
                 best_street_score = -1
                # for street in intersection.input_streets:
                     
-            n_sim -= 1
+            self.n_sim -= 1
 
         return self.intersections
