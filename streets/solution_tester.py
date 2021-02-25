@@ -18,7 +18,7 @@ def test_solution(cars: List[Car], intersections: Dict[int, Intersection], simul
 
         for intersection in intersections.values():
             if intersection.is_busy():
-                street_index = intersection.calculate_current_schedule(timestep)
-                intersection.move_car(intersection.input_streets[street_index])
+                schedule = intersection.calculate_current_schedule(timestep)
+                intersection.move_car(schedule.street)
         working_car_list = [car for car in working_car_list if not car.has_arrived()]
     return total_reward
