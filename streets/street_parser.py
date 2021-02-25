@@ -29,10 +29,12 @@ class StreetParser:
                 intersections[street.end].input_streets.append(street)
             else:
                 start = info[1]
-                car = Car(int(info[0]),info[2:])
+                car = Car(int(info[0]))
+                for s in info[2:]:
+                    car.streets.append(streets[s])
                 streets[start].cars.put(car)
                 cars.append(car)
             i += 1
 
-        return intersections, cars, streets
-        #pizzas.sort(key=lambda x: x.n_in, reverse=True)
+        cars.sort(key=lambda x: x.n_streets, reverse=False)
+        return n_sim, n_intersections, n_streets, n_cars, bonus_point, intersections, cars, streets

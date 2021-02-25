@@ -12,6 +12,7 @@ class Intersection:
         self.index = index
         self.input_streets: List[Street] = []
         self.output_streets: List[Street] = []
+        self.schedule = []
 
     def is_busy(self) -> bool:
         for street in self.input_streets:

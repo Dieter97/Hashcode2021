@@ -7,9 +7,9 @@ from streets.street import Street
 
 class Car:
 
-    def __init__(self, n_streets, streets):
+    def __init__(self, n_streets):
         self.n_streets: int = n_streets
-        self.streets: List[int] = streets
+        self.streets: List[int] = []
         self.time_from_end_of_street: int = 0
         self.current_street_index: int = 0
 
@@ -26,3 +26,4 @@ class Car:
 
     def has_arrived(self):
         return self.current_street_index == self.n_streets
+
