@@ -1,7 +1,8 @@
 from naive_algorithm.NaiveSovler import NaiveIntersectionOptimizer as Solver
 
 
-def work(input_file: str, output_file: str):   
+def work(input_file: str, output_file: str): 
+    print(input_file,"...")
     optimizer = Solver(input_file)
     solution = optimizer.calculate_solution()
     write_solution(solution, output_file)
