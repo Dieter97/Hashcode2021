@@ -21,10 +21,10 @@ def write_solution(intersections, file):
     f.write(str(len(valid_intersections)) + '\n')
     # Solution is list of intersections with a schedule object
     for intersection in valid_intersections:
-        f.write(intersection.index + '\n')
-        f.write(len(intersection.schedule) + '\n')
+        f.write(f"{intersection.index}\n")
+        f.write(f"{len(intersection.schedule)}\n")
         for s in intersection.schedule:
-            f.write(s.street.name + ' ' + s.duration)
+            f.write(f"{s.street.name} {s.duration}")
     f.close()
 
 
