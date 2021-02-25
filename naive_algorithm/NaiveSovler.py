@@ -18,9 +18,12 @@ class NaiveIntersectionOptimizer:
 
             buziest = intersection.get_busiest_street()
 
-            duration = buziest.cars.qsize()
+            duration = self.n_sim
 
-            intersection.schedule.append(Schedule(buziest, duration))
+            if duration != 0:
+                print("adding %s, for duration: %d" %  (buziest.name, duration))
+
+                intersection.schedule.append(Schedule(buziest, duration))
 
             # Move the cars will move
             #[intersection.move_car(buziest) for _ in range(buziest.cars.qsize())]
