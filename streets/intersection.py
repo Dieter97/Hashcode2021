@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import List
 
 from streets.car import Car
+from streets.schedule import Schedule
 from streets.street import Street
 
 
@@ -12,7 +13,7 @@ class Intersection:
         self.index = index
         self.input_streets: List[Street] = []
         self.output_streets: List[Street] = []
-        self.schedule = []
+        self.schedule: List[Schedule] = []
 
     def is_busy(self) -> bool:
         for street in self.input_streets:
@@ -26,7 +27,7 @@ class Intersection:
             street = self.get_car_street(car)
             car.move_into_new_street(street)
 
-    def calculate_current_schedule(self, timestep: int) -> int:
+    def calculate_current_schedule(self, timestep: int) -> Schedule:
         if timestep - 1 > len(self.schedule):
             timestep = timestep % len(self.schedule)
         return self.schedule[timestep]
